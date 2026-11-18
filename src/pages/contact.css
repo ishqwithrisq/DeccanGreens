@@ -1,0 +1,1949 @@
+/* =========================================
+   DECCAN GREENS — CONTACT PAGE
+   Uses the Deccan Greens home-page design system
+========================================= */
+
+.cu-page {
+  --cu-green: #07583c;
+  --cu-deep: #063e2d;
+  --cu-leaf: #78a943;
+  --cu-text: #183b2d;
+  --cu-muted: #68776d;
+  --cu-cream: #f7faf3;
+  --cu-line: #e5ece3;
+
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--cu-text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.cu-page *,
+.cu-page *::before,
+.cu-page *::after {
+  box-sizing: border-box;
+}
+
+.cu-page a {
+  text-decoration: none;
+}
+
+.cu-page button,
+.cu-page input,
+.cu-page select,
+.cu-page textarea {
+  font: inherit;
+}
+
+.cu-eyebrow {
+  display: inline-block;
+  color: var(--cu-leaf);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 1.35px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* HERO */
+.cu-hero {
+  min-height: 560px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  padding: 70px max(7%, calc((100% - 1250px) / 2));
+  background: var(--cu-deep);
+}
+
+.cu-hero-image,
+.cu-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cu-hero-image {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.cu-hero-overlay {
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(248, 251, 242, .98) 0%, rgba(248, 251, 242, .94) 25%, rgba(248, 251, 242, .75) 40%, rgba(248, 251, 242, .30) 48%, rgba(248, 251, 242, 0) 55%);
+}
+
+.cu-hero-copy {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.cu-hero .cu-eyebrow {
+  color: #cce4ae;
+  margin-bottom: 20px;
+}
+
+.cu-hero-copy h1 {
+  color: #fff;
+  font: 800 clamp(37px, 4.0vw, 60px) / 1.1 "Manrope", sans-serif;
+  letter-spacing: -3px;
+  margin: 0 0 23px;
+}
+
+.cu-hero-copy h1 em {
+  color: #4b8039;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.cu-hero-description {
+  max-width: 520px;
+  color: rgba(255, 255, 255, .86);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.cu-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin: 28px 0 32px;
+}
+
+.cu-hero-points div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.cu-hero-points svg {
+  width: 18px;
+  height: 18px;
+  color: #c6dc9e;
+  stroke-width: 1.8;
+}
+
+.cu-hero-points b {
+  font-weight: 650;
+}
+
+.cu-hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 15px 22px;
+  color: var(--cu-deep);
+  background: #d5e7b8;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.cu-hero-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.cu-hero-button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.cu-hero-note {
+  position: absolute;
+  right: 8%;
+  bottom: 65px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  color: #fff;
+  background: rgba(25, 58, 37, .68);
+  border: 1px solid rgba(255, 255, 255, .24);
+  backdrop-filter: blur(10px);
+  border-radius: 9px;
+}
+
+.cu-hero-note svg {
+  width: 32px;
+  height: 32px;
+  color: #c5dd9b;
+}
+
+.cu-hero-note b {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: .2px;
+  text-align: left;
+}
+
+.cu-hero-decoration {
+  position: absolute;
+  right: 10%;
+  top: 8%;
+  color: rgba(255, 255, 255, .12);
+  font-size: 145px;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+/* CONTACT CARDS */
+.cu-contact-cards {
+  position: relative;
+  z-index: 3;
+  width: min(1160px, 88%);
+  margin: -42px auto 58px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 14px 42px rgba(24, 59, 45, .09);
+  border: 1px solid var(--cu-line);
+  overflow: hidden;
+}
+
+.cu-contact-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 27px 20px;
+  min-width: 0;
+  transition: background .25s ease;
+}
+
+.cu-contact-card:not(:last-child) {
+  border-right: 1px solid var(--cu-line);
+}
+
+.cu-contact-card:hover {
+  background: #f9fbf6;
+}
+
+.cu-contact-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  color: var(--cu-green);
+  background: #edf4e8;
+  border-radius: 12px;
+}
+
+.cu-contact-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+.cu-contact-card-content {
+  min-width: 0;
+  text-align: left;
+}
+
+.cu-contact-card h3 {
+  color: var(--cu-deep);
+  font: 750 16px/1.3 "Manrope", sans-serif;
+  margin: 1px 0 7px;
+}
+
+.cu-contact-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 58px;
+}
+
+.cu-contact-lines span {
+  color: var(--cu-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.cu-contact-card-content>a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cu-green);
+  font-size: 12px;
+  font-weight: 800;
+  border-bottom: 1px solid #b9c9ad;
+  padding-bottom: 4px;
+  transition: .25s ease;
+}
+
+.cu-contact-card-content>a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cu-contact-card-content>a:hover {
+  color: var(--cu-leaf);
+  gap: 10px;
+}
+
+/* ENQUIRY SECTION */
+.cu-enquiry-section {
+  width: min(1200px, 88%);
+  margin: 0 auto 58px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: stretch;
+  gap: 22px;
+}
+
+/* Left visual panel */
+.cu-enquiry-banner {
+  position: relative;
+  isolation: isolate;
+  min-height: 650px;
+  padding: 46px 38px;
+  background: var(--cu-deep);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cu-enquiry-banner>img,
+.cu-enquiry-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cu-enquiry-banner>img {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cu-enquiry-overlay {
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(35, 65, 27, 0.98) 0%,
+    rgba(45, 82, 34, 0.92) 30%,
+    rgba(75, 128, 57, 0.65) 55%,
+    rgba(75, 128, 57, 0.20) 78%,
+    rgba(75, 128, 57, 0) 100%
+  );
+}
+
+.cu-enquiry-banner-copy {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.cu-enquiry-banner .cu-eyebrow {
+  color: #c6dfa0;
+}
+
+.cu-enquiry-banner-copy h2 {
+  color: #fff;
+  font: 800 clamp(32px, 3.3vw, 43px)/1.15 "Manrope", sans-serif;
+  letter-spacing: -1.3px;
+  margin: 9px 0 17px;
+}
+
+.cu-enquiry-banner-copy>p {
+  color: rgba(255, 255, 255, .83);
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 0 0 25px;
+}
+
+.cu-enquiry-banner-copy ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cu-enquiry-banner-copy li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4f7ed;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cu-enquiry-banner-copy li>span {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  color: #d0e6a9;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 10px;
+}
+
+.cu-enquiry-banner-copy li svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* FORM PANEL — reference image styling */
+.cu-form-panel {
+  width: 100%;
+  min-width: 0;
+  padding: 38px clamp(25px, 3.2vw, 44px) 40px;
+  background: #fff;
+  border: 1px solid #e7ece6;
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(24, 59, 45, .055);
+}
+
+.cu-form-heading {
+  margin: 0 0 32px;
+  text-align: left;
+}
+
+.cu-form-heading h2 {
+  color: var(--cu-green);
+  font: 800 clamp(32px, 3.2vw, 42px)/1.18 "Manrope", sans-serif;
+  letter-spacing: -1.2px;
+  margin: 0 0 7px;
+}
+
+.cu-form-heading p {
+  color: #68716b;
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cu-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 18px;
+}
+
+.cu-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cu-form-field>label,
+.cu-form-field>label:not(.cu-consent) {
+  color: #202720;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 750;
+  text-align: left;
+}
+
+.cu-required {
+  color: #c33e3e;
+}
+
+.cu-form-field input:not([type="checkbox"]),
+.cu-form-field select,
+.cu-form-field textarea {
+  width: 100%;
+  min-height: 36px;
+  padding: 11px 16px;
+  color: #263b31;
+  background: #fff;
+  border: 1.5px solid #dfe5e0;
+  border-radius: 7px;
+  outline: none;
+  font-size: 15px;
+  font-weight: 400;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.cu-form-field input::placeholder,
+.cu-form-field textarea::placeholder {
+  color: #929a94;
+  opacity: 1;
+}
+
+.cu-form-field select {
+  color: #737d75;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2368756d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
+}
+
+.cu-form-field textarea {
+  /* min-height: 96px; */
+  resize: vertical;
+  line-height: 1.6;
+}
+
+
+.cu-form-field-full {
+  grid-column: 1 / -1;
+}
+
+.cu-consent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  color: #303a33;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+.cu-consent input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  margin: 0;
+  border: 1.5px solid #aeb9b0;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cu-consent input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  transition: transform .12s ease;
+  background: #fff;
+  clip-path: polygon(14% 44%, 0 65%, 42% 100%, 100% 16%, 80% 0, 38% 65%);
+}
+
+.cu-consent input:checked {
+  background: var(--cu-green);
+  border-color: var(--cu-green);
+}
+
+.cu-consent input:checked::before {
+  transform: scale(1);
+}
+
+.cu-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 13px 22px;
+  color: #fff;
+  background: #075b39;
+  border: 1px solid #075b39;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.cu-submit-btn svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 2.2;
+}
+
+.cu-submit-btn:hover {
+  background: var(--cu-deep);
+  border-color: var(--cu-deep);
+  transform: translateY(-1px);
+}
+
+.cu-form-message {
+  margin: 12px 0 0;
+  padding: 11px 13px;
+  color: var(--cu-green);
+  background: #edf5e8;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* LOCATION */
+.cu-location-section {
+  width: min(1200px, 88%);
+  margin: 0 auto 58px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  min-height: 390px;
+  background: var(--cu-cream);
+  border: 1px solid var(--cu-line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cu-map-panel {
+  position: relative;
+  min-height: 390px;
+  background: #e9eee4;
+}
+
+.cu-map-panel iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  border: 0;
+  filter: saturate(.82);
+}
+
+.cu-map-link {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  color: var(--cu-deep);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .12);
+  font-size: 12px;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.cu-map-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cu-map-link:hover {
+  background: var(--cu-green);
+  color: #fff;
+}
+
+.cu-office-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 42px 44px;
+}
+
+.cu-office-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.cu-office-heading h2 {
+  color: var(--cu-deep);
+  font: 800 24px/1.25 "Manrope", sans-serif;
+  margin: 0 0 10px;
+}
+
+.cu-office-address {
+  color: var(--cu-muted);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+  text-align: left;
+}
+
+.cu-office-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+  padding: 19px 0;
+  border-top: 1px solid var(--cu-line);
+  border-bottom: 1px solid var(--cu-line);
+}
+
+.cu-office-features>div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cu-office-features>div>svg {
+  width: 21px;
+  height: 21px;
+  color: var(--cu-green);
+  flex-shrink: 0;
+}
+
+.cu-office-features b,
+.cu-office-features small {
+  display: block;
+}
+
+.cu-office-features b {
+  color: var(--cu-deep);
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.cu-office-features small {
+  color: var(--cu-muted);
+  font-size: 11px;
+}
+
+.cu-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 13px 19px;
+  color: #fff;
+  background: var(--cu-green);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .25s ease;
+}
+
+.cu-directions-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cu-directions-btn:hover {
+  background: var(--cu-deep);
+  transform: translateY(-2px);
+}
+
+/* FAQ */
+.cu-faq-section {
+  width: min(1200px, 88%);
+  margin: 0 auto 60px;
+}
+
+.cu-faq-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.cu-section-heading {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.cu-section-heading .cu-eyebrow {
+  margin-bottom: 7px;
+}
+
+.cu-section-heading h2 {
+  color: var(--cu-deep);
+  font: 800 clamp(29px, 2.7vw, 37px)/1.2 "Manrope", sans-serif;
+  letter-spacing: -.9px;
+  margin: 0 0 8px;
+}
+
+.cu-section-heading p {
+  color: var(--cu-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cu-faq-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  color: var(--cu-green);
+  font-size: 12px;
+  font-weight: 800;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #aabf9b;
+}
+
+.cu-faq-contact-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cu-faq-list {
+  border-top: 1px solid var(--cu-line);
+}
+
+.cu-faq-item {
+  border-bottom: 1px solid var(--cu-line);
+  transition: background .2s ease;
+}
+
+.cu-faq-item.is-open {
+  background: #fafcf8;
+}
+
+.cu-faq-item>button {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 17px 20px;
+  color: var(--cu-deep);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.cu-faq-question {
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+.cu-faq-item>button>b {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--cu-green);
+  background: #eaf2e5;
+  border-radius: 50%;
+}
+
+.cu-faq-item>button>b svg {
+  width: 16px;
+  height: 16px;
+}
+
+.cu-faq-item.is-open>button>b {
+  color: #fff;
+  background: var(--cu-green);
+}
+
+.cu-faq-item>p {
+  max-width: 760px;
+  margin: -2px 0 0;
+  padding: 0 65px 22px 20px;
+  color: var(--cu-muted);
+  font-size: 13px;
+  line-height: 1.75;
+  text-align: left;
+}
+
+/* BOTTOM CTA */
+.dg-cta {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 190px;
+  padding: 38px max(6%, calc((100% - 1200px) / 2));
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(6, 43, 28, .95) 0%, rgba(6, 59, 37, .87) 58%, rgba(6, 59, 37, .55) 100%),
+    url("/src/assets/images/cta-seedling.png") center 48% / cover no-repeat;
+}
+
+.dg-cta-mark {
+  flex: 0 0 62px;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #b6d19c;
+  border-radius: 50%;
+  color: #d9efc6;
+  font-size: 29px;
+  background: #ffffff12;
+}
+
+.dg-cta-copy {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.dg-cta .cu-eyebrow {
+  color: #c6e2a7;
+}
+
+.dg-cta h2 {
+  margin: 7px 0 8px;
+  color: #fff;
+  font: 800 clamp(22px, 2.1vw, 30px)/1.3 "Manrope", sans-serif;
+}
+
+.dg-cta p {
+  max-width: 720px;
+  margin: 0 0 13px;
+  color: #e0eee5;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dg-cta-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.dg-cta-button,
+.dg-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 10px 18px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+.dg-cta-button svg,
+.dg-cta-outline svg {
+  width: 15px;
+  height: 15px;
+}
+
+.dg-cta-button {
+  color: var(--cu-green);
+  background: #fff;
+  border: 1px solid #fff;
+}
+
+.dg-cta-button:hover {
+  color: #fff;
+  background: var(--cu-green);
+}
+
+.dg-cta-outline {
+  color: #fff;
+  border: 1px solid #b6d19c88;
+  background: #ffffff0a;
+}
+
+.dg-cta-outline:hover {
+  color: var(--cu-green);
+  background: #fff;
+}
+
+.dg-cta-button:hover,
+.dg-cta-outline:hover {
+  transform: translateY(-2px);
+}
+
+
+
+/* TABLET */
+@media (max-width: 1050px) {
+  .cu-contact-cards {
+    width: 90%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cu-contact-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .cu-contact-card:nth-child(-n+2) {
+    border-bottom: 1px solid var(--cu-line);
+  }
+
+  .cu-enquiry-section,
+  .cu-location-section,
+  .cu-faq-section {
+    width: 90%;
+  }
+
+  .cu-enquiry-section {
+    grid-template-columns: .85fr 1.15fr;
+  }
+
+  .cu-enquiry-banner {
+    padding: 40px 28px;
+  }
+
+  .cu-form-panel {
+    padding: 34px 28px;
+  }
+
+  .cu-form-grid {
+    column-gap: 18px;
+  }
+
+  .cu-office-card {
+    padding: 35px 30px;
+  }
+
+  .dg-cta {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .cu-hero {
+    min-height: 620px;
+    padding: 62px 7%;
+    align-items: flex-start;
+  }
+
+  .cu-hero-overlay {
+    background: linear-gradient(90deg, rgba(6, 38, 25, .95), rgba(6, 48, 31, .76));
+  }
+
+  .cu-hero-copy {
+    padding-top: 12px;
+  }
+
+  .cu-hero-copy h1 {
+    font-size: clamp(48px, 12vw, 68px);
+    letter-spacing: -2.5px;
+  }
+
+  .cu-hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .cu-hero-points {
+    gap: 13px 18px;
+    margin: 23px 0 27px;
+  }
+
+  .cu-hero-points div {
+    font-size: 11px;
+  }
+
+  .cu-hero-note {
+    right: 7%;
+    bottom: 22px;
+    padding: 12px 15px;
+  }
+
+  .cu-hero-note svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .cu-hero-note b {
+    font-size: 11px;
+  }
+
+  .cu-hero-decoration {
+    right: 4%;
+    top: 4%;
+    font-size: 95px;
+  }
+
+  .cu-contact-cards {
+    width: 88%;
+    margin-top: -18px;
+    margin-bottom: 55px;
+    grid-template-columns: 1fr;
+  }
+
+  .cu-contact-card {
+    padding: 20px;
+    border-right: 0 !important;
+    border-bottom: 1px solid var(--cu-line);
+  }
+
+  .cu-contact-card:last-child {
+    border-bottom: 0;
+  }
+
+  .cu-contact-lines {
+    min-height: auto;
+  }
+
+  .cu-contact-card-content>a {
+    margin-top: 9px;
+  }
+
+  .cu-enquiry-section {
+    width: 88%;
+    margin-bottom: 55px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cu-enquiry-banner {
+    min-height: 420px;
+    padding: 38px 28px;
+  }
+
+  .cu-enquiry-banner-copy h2 {
+    font-size: 36px;
+  }
+
+  .cu-enquiry-banner-copy>p {
+    font-size: 13px;
+  }
+
+  .cu-enquiry-banner-copy ul {
+    gap: 13px;
+  }
+
+  .cu-form-panel {
+    padding: 30px 24px;
+    border-radius: 13px;
+  }
+
+  .cu-form-heading {
+    margin-bottom: 23px;
+  }
+
+  .cu-form-heading h2 {
+    font-size: 31px;
+  }
+
+  .cu-form-heading p {
+    font-size: 13px;
+  }
+
+  .cu-form-grid {
+    grid-template-columns: 1fr;
+    row-gap: 17px;
+  }
+
+  .cu-form-field-full {
+    grid-column: auto;
+  }
+
+  .cu-form-field>label,
+  .cu-form-field>label:not(.cu-consent) {
+    font-size: 13px;
+  }
+
+  .cu-form-field input:not([type="checkbox"]),
+  .cu-form-field select {
+    font-size: 13px;
+  }
+
+  .cu-form-field textarea {
+    min-height: 100px;
+    font-size: 13px;
+  }
+
+  .cu-consent {
+    align-items: flex-start;
+    font-size: 12px;
+  }
+
+  .cu-submit-btn {
+    font-size: 14px;
+  }
+
+  .cu-location-section {
+    width: 88%;
+    margin-bottom: 55px;
+    grid-template-columns: 1fr;
+  }
+
+  .cu-map-panel,
+  .cu-map-panel iframe {
+    min-height: 290px;
+  }
+
+  .cu-office-card {
+    padding: 30px 25px;
+  }
+
+  .cu-office-heading h2 {
+    font-size: 22px;
+  }
+
+  .cu-faq-section {
+    width: 88%;
+    margin-bottom: 55px;
+  }
+
+  .cu-faq-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 23px;
+  }
+
+  .cu-faq-item>button {
+    min-height: 65px;
+    padding: 15px 12px;
+  }
+
+  .cu-faq-question {
+    font-size: 13px;
+  }
+
+  .cu-faq-item>p {
+    padding: 0 45px 19px 12px;
+    font-size: 12px;
+  }
+
+  .dg-cta {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 30px 6%;
+  }
+
+  .dg-cta-mark {
+    flex-basis: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 23px;
+  }
+
+  .dg-cta-copy {
+    flex-basis: calc(100% - 66px);
+  }
+
+  .dg-cta h2 {
+    font-size: 21px;
+  }
+
+  .dg-cta p {
+    font-size: 13px;
+  }
+
+  .dg-cta-actions {
+    width: 100%;
+    margin-left: 0;
+    gap: 9px;
+  }
+
+  .dg-cta-button,
+  .dg-cta-outline {
+    min-height: 41px;
+    padding: 9px 13px;
+    font-size: 11px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .cu-hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .cu-hero-copy h1 {
+    font-size: 47px;
+  }
+
+  .cu-hero-points {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cu-hero-note {
+    left: 6%;
+    right: auto;
+  }
+
+  .cu-contact-cards,
+  .cu-enquiry-section,
+  .cu-location-section,
+  .cu-faq-section {
+    width: 90%;
+  }
+
+  .cu-form-panel {
+    padding: 27px 19px;
+  }
+
+  .cu-office-features {
+    grid-template-columns: 1fr;
+  }
+
+  .dg-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dg-cta-button,
+  .dg-cta-outline {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cu-page *,
+  .cu-page *::before,
+  .cu-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+
+/* =========================================================
+   CONTACT PAGE VISUAL REFINEMENTS — HOME HERO + MAP + FAQ
+   The enquiry image banner and form styles above are retained.
+========================================================= */
+
+/* Light, white-overlay hero treatment to echo the Home page */
+.cu-hero {
+  min-height: 560px;
+  background: #f7faf3;
+}
+
+.cu-hero-overlay {
+  background:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, .97) 0%,
+      rgba(255, 255, 255, .92) 34%,
+      rgba(255, 255, 255, .72) 55%,
+      rgba(255, 255, 255, .12) 100%);
+}
+
+.cu-hero .cu-eyebrow {
+  color: var(--cu-leaf);
+}
+
+.cu-hero-copy h1 {
+  color: var(--cu-deep);
+  font: 800 clamp(45px, 5.6vw, 72px)/1.08 "Manrope", sans-serif;
+  letter-spacing: -2.8px;
+}
+
+.cu-hero-copy h1 em {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+}
+
+.cu-hero-description {
+  color: #53665a;
+  max-width: 535px;
+}
+
+.cu-hero-points div {
+  color: var(--cu-deep);
+}
+
+.cu-hero-points svg {
+  color: var(--cu-leaf);
+}
+
+.cu-hero-button {
+  color: #fff;
+  background: var(--cu-green);
+  border: 1px solid var(--cu-green);
+  border-radius: 28px;
+  padding: 14px 22px;
+}
+
+.cu-hero-button:hover {
+  color: #fff;
+  background: var(--cu-deep);
+}
+
+.cu-hero-note {
+  color: var(--cu-deep);
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid rgba(7, 88, 60, .12);
+  box-shadow: 0 12px 35px rgba(24, 59, 45, .10);
+  backdrop-filter: blur(12px);
+}
+
+.cu-hero-note svg {
+  color: var(--cu-leaf);
+}
+
+.cu-hero-decoration {
+  color: rgba(7, 88, 60, .10);
+}
+
+/* Compact map and office information row from the supplied reference */
+.cu-location-section {
+  width: min(1200px, 88%);
+  grid-template-columns: 1.18fr .92fr;
+  gap: 18px;
+  min-height: 0;
+  margin: 0 auto 28px;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.cu-map-panel {
+  min-height: 168px;
+  overflow: hidden;
+  border: 1px solid #e5ece3;
+  border-radius: 16px;
+  background: #f4f7ef;
+  box-shadow: 0 5px 18px rgba(24, 59, 45, .06);
+}
+
+.cu-map-panel iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 168px;
+  filter: saturate(.72) contrast(.97);
+}
+
+.cu-map-link {
+  left: 12px;
+  bottom: 11px;
+  padding: 8px 11px;
+  border-radius: 22px;
+  font-size: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .10);
+}
+
+.cu-office-card {
+  position: relative;
+  min-width: 0;
+  min-height: 168px;
+  padding: 18px 23px 16px;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #f5f7ec;
+  border: 1px solid #e8eddf;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(24, 59, 45, .045);
+}
+
+.cu-office-decoration {
+  position: absolute;
+  width: 118px;
+  height: 118px;
+  right: -13px;
+  top: -13px;
+  color: rgba(120, 169, 67, .12);
+  transform: rotate(-28deg);
+  pointer-events: none;
+}
+
+.cu-office-heading {
+  position: relative;
+  z-index: 1;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 0 0 11px;
+  text-align: left;
+}
+
+.cu-office-pin {
+  display: grid;
+  place-items: center;
+  flex: 0 0 27px;
+  width: 27px;
+  height: 27px;
+  color: var(--cu-green);
+  background: #e6efd9;
+  border-radius: 50%;
+}
+
+.cu-office-pin svg {
+  width: 15px;
+  height: 15px;
+}
+
+.cu-office-heading h2 {
+  margin: 0 0 3px;
+  color: #20392b;
+  font: 800 15px/1.25 "Manrope", sans-serif;
+}
+
+.cu-office-address {
+  color: #657168;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.cu-office-contacts {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 9px 0 8px;
+  border-top: 1px solid rgba(104, 119, 109, .18);
+  text-align: left;
+}
+
+.cu-office-contacts a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--cu-green);
+}
+
+.cu-office-contacts a+a {
+  padding-left: 12px;
+  border-left: 1px solid rgba(104, 119, 109, .22);
+}
+
+.cu-office-contacts a>svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  stroke-width: 2.2;
+}
+
+.cu-office-contacts b,
+.cu-office-contacts small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.cu-office-contacts b {
+  color: #263c30;
+  font-size: 10px;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.cu-office-contacts small {
+  color: #657168;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.cu-directions-btn {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  gap: 7px;
+  margin-top: 0;
+  padding: 8px 15px;
+  border-radius: 22px;
+  font-size: 10px;
+}
+
+.cu-directions-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* FAQ section: soft neutral surface and compact green accordion rows */
+.cu-faq-section {
+  width: min(1200px, 88%);
+  margin: 0 auto 58px;
+  padding: 8px 7px 12px;
+  background: #fbfcf7;
+  border-radius: 13px;
+}
+
+.cu-faq-heading {
+  align-items: flex-end;
+  margin: 0 0 13px;
+  padding: 0 9px;
+}
+
+.cu-faq-heading .cu-section-heading {
+  margin: 0;
+}
+
+.cu-faq-heading .cu-section-heading .cu-eyebrow {
+  display: block;
+  margin-bottom: 1px;
+  color: var(--cu-green);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.cu-faq-heading .cu-section-heading h2 {
+  margin: 0 0 2px;
+  color: #1c392a;
+  font: 800 clamp(21px, 2.2vw, 27px)/1.2 "Manrope", sans-serif;
+  letter-spacing: -.7px;
+}
+
+.cu-faq-heading .cu-section-heading p {
+  color: #5f6c63;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cu-faq-contact-link {
+  padding-bottom: 3px;
+  border: 0;
+  color: var(--cu-green);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.cu-faq-contact-link svg {
+  width: 13px;
+  height: 13px;
+}
+
+.cu-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 0;
+}
+
+.cu-faq-item {
+  overflow: hidden;
+  border: 1px solid #e2e8df;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.cu-faq-item.is-open {
+  background: #edf3dc;
+  border-color: #e8efd8;
+}
+
+.cu-faq-item>button {
+  min-height: 35px;
+  padding: 7px 13px;
+  color: #24382b;
+}
+
+.cu-faq-question {
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 750;
+}
+
+.cu-faq-item>button>b {
+  width: 18px;
+  height: 18px;
+  color: var(--cu-green);
+  background: #e8f0df;
+}
+
+.cu-faq-item>button>b svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.5;
+}
+
+.cu-faq-item.is-open>button>b {
+  color: #fff;
+  background: #78a943;
+}
+
+.cu-faq-item>p {
+  max-width: 850px;
+  margin: -1px 0 0;
+  padding: 0 42px 9px 13px;
+  color: #5d6c61;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Responsive refinements for the new map + FAQ layout */
+@media (max-width: 1050px) {
+
+  .cu-location-section,
+  .cu-faq-section {
+    width: 90%;
+  }
+
+  .cu-office-card {
+    padding: 17px 18px 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cu-hero {
+    min-height: 600px;
+  }
+
+  .cu-hero-overlay {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, .96) 0%,
+        rgba(255, 255, 255, .88) 65%,
+        rgba(255, 255, 255, .35) 100%);
+  }
+
+  .cu-hero-copy h1 {
+    color: var(--cu-deep);
+  }
+
+  .cu-hero-description {
+    color: #53665a;
+  }
+
+  .cu-hero-points div {
+    color: var(--cu-deep);
+  }
+
+  .cu-hero-note {
+    right: 6%;
+    bottom: 20px;
+  }
+
+  .cu-location-section {
+    width: 88%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .cu-map-panel,
+  .cu-map-panel iframe {
+    height: 205px;
+    min-height: 205px;
+  }
+
+  .cu-office-card {
+    min-height: 170px;
+    padding: 18px 20px 16px;
+  }
+
+  .cu-faq-section {
+    width: 88%;
+    padding: 8px 0 10px;
+    margin-bottom: 45px;
+  }
+
+  .cu-faq-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 5px;
+  }
+
+  .cu-faq-heading .cu-section-heading h2 {
+    font-size: 23px;
+  }
+
+  .cu-faq-heading .cu-section-heading p {
+    font-size: 11px;
+  }
+
+  .cu-faq-item>button {
+    min-height: 42px;
+    padding: 9px 11px;
+  }
+
+  .cu-faq-question {
+    font-size: 12px;
+  }
+
+  .cu-faq-item>p {
+    padding: 0 38px 11px 11px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cu-office-contacts {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .cu-office-contacts a+a {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .cu-office-card {
+    min-height: 0;
+  }
+
+  .cu-faq-heading .cu-section-heading h2 {
+    font-size: 21px;
+  }
+}
+
+
+/* =========================================================
+   TYPOGRAPHY ALIGNMENT — LOCATION + FAQ
+   Match the typography scale used by the other Contact sections.
+========================================================= */
+
+/* Location / office card */
+.cu-office-heading h2 {
+  font-size: 18px;
+  line-height: 1.3;
+  letter-spacing: -.35px;
+}
+
+.cu-office-address {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cu-office-contacts b {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cu-office-contacts small {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cu-directions-btn,
+.cu-map-link {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* FAQ heading now uses the same section-heading scale */
+.cu-faq-heading .cu-section-heading .cu-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  margin-bottom: 5px;
+}
+
+.cu-faq-heading .cu-section-heading h2 {
+  font-size: clamp(29px, 2.7vw, 37px);
+  line-height: 1.2;
+  letter-spacing: -.9px;
+  margin: 0 0 7px;
+}
+
+.cu-faq-heading .cu-section-heading p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.cu-faq-contact-link {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* FAQ questions and answers use the same readable body scale */
+.cu-faq-item>button {
+  min-height: 48px;
+  padding: 11px 16px;
+}
+
+.cu-faq-question {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.cu-faq-item>button>b {
+  width: 23px;
+  height: 23px;
+}
+
+.cu-faq-item>button>b svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cu-faq-item>p {
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 0 48px 14px 16px;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .cu-office-heading h2 {
+    font-size: 17px;
+  }
+
+  .cu-office-address {
+    font-size: 12px;
+  }
+
+  .cu-faq-heading .cu-section-heading h2 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile remains readable without becoming oversized */
+@media (max-width: 700px) {
+  .cu-office-heading h2 {
+    font-size: 17px;
+  }
+
+  .cu-office-address {
+    font-size: 12px;
+  }
+
+  .cu-office-contacts b {
+    font-size: 12px;
+  }
+
+  .cu-office-contacts small {
+    font-size: 11px;
+  }
+
+  .cu-directions-btn,
+  .cu-map-link {
+    font-size: 11px;
+  }
+
+  .cu-faq-heading .cu-section-heading .cu-eyebrow {
+    font-size: 11px;
+  }
+
+  .cu-faq-heading .cu-section-heading h2 {
+    font-size: 27px;
+    line-height: 1.2;
+  }
+
+  .cu-faq-heading .cu-section-heading p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .cu-faq-question {
+    font-size: 13px;
+  }
+
+  .cu-faq-item>button {
+    min-height: 46px;
+    padding: 10px 12px;
+  }
+
+  .cu-faq-item>p {
+    font-size: 12px;
+    line-height: 1.6;
+    padding: 0 40px 12px 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cu-faq-heading .cu-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .cu-faq-heading .cu-section-heading p {
+    font-size: 12px;
+  }
+
+  .cu-faq-question {
+    font-size: 12px;
+  }
+
+  .cu-faq-item>p {
+    font-size: 11px;
+  }
+}
