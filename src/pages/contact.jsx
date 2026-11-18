@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Contact.css";
+import "./contact.css";
 import { FaSeedling } from "react-icons/fa";
 import hero from "../assets/images/contact.jpeg"
 import {

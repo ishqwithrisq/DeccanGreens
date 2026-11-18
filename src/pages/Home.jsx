@@ -22,7 +22,7 @@ import {
   GiTreeGrowth,
 } from "react-icons/gi";
 import { FaSeedling } from "react-icons/fa";
-import "./home.css";
+import "./Home.css";
 import HeroGreenhouse from "../assets/images/HeroHome.jpeg";
 
 const photo = (id, width = 900) =>
